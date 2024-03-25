@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Generator</title>
+</head>
+<body>
+    <h2>Select Background Image and Enter Your Name</h2>
+    <form method="post" action="/generate-image" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Enter text">
+        <select name="backgroundImage">
+            <% backgrounds.forEach(function(bg) { %>
+                <option value="<%= bg.background_file_name %>"><%= bg.name %></option>
+            <% }); %>
+        </select>
+        <button type="submit">Generate Image</button>
+    </form>
+</body>
+</html>
