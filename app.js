@@ -7,7 +7,7 @@ const { addWrappedTextToSvgAndPng } = require('./imageProcessor');
 const csv = require('csv-parser');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8080;
 
 // Middleware to parse URL-encoded data
 app.use(express.urlencoded({ extended: true }));
@@ -75,5 +75,7 @@ app.get('/', (req, res) => {
 //});
 
 
-app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
 
